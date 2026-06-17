@@ -5,21 +5,58 @@ then
     echo "Error :: it should be in root user"
     exit 1
 fi
-dnf install mysql -y
+
+dnf list installed mysql
 if [ $? -ne 0 ]
 then
-echo "installing.... mysql failure"
-exit 1
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then
+    echo "installing.... mysql failure"
+    exit 1
+    else
+    echo "installing.... mysql sucessful"
+    fi
 else
-echo "installing.... mysql sucessful"
-fi
-sudo dnf install git -y
-if [ $? -ne 0 ]
+echo "mysql is already installed"
+
+dnf list installed git
+if [ $? -ne 0]
 then
-echo "installing.... git failure"
-exit 1
+    dnf install git -y
+    if [ $? -ne 0 ]
+    then
+    echo "installing.... git failure"
+    exit 1
+    else
+    echo "installing.... git
+    sucessful"
+    fi
 else
-echo "installing.... git
- sucessful"
-fi
+echo "git is already installed"
+
+    
+
+
+
+
+
+
+# dnf install mysql -y
+# if [ $? -ne 0 ]
+# then
+# echo "installing.... mysql failure"
+# exit 1
+# else
+# echo "installing.... mysql sucessful"
+# fi
+# sudo dnf install git -y
+# if [ $? -ne 0 ]
+# then
+# echo "installing.... git failure"
+# exit 1
+# else
+# echo "installing.... git
+#  sucessful"
+# fi
 
