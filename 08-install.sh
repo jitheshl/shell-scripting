@@ -16,9 +16,10 @@ fi
 sudo dnf install git -y
 if [ $? -ne 0 ]
 then
-echo "installing.... mysql failure"
+echo "installing.... git failure"
 exit 1
 else
-echo "installing.... mysql sucessful"
+echo "installing.... git
+ sucessful"
 fi
 
