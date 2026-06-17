@@ -23,10 +23,10 @@ fi
 validate(){
     if [ $1 -ne 0 ]
     then
-    echo -e "$r Ainstalling.... $2 failure"
+    echo -e "$r installing.... $2 failure"
     exit 1
     else
-    echo "$g installing.... $2 sucessful"
+    echo -e "$g installing.... $2 sucessful"
     fi
 }
 
