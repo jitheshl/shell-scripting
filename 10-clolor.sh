@@ -1,6 +1,8 @@
 #!/bin/bash
 userid=$(id -u)
-
+r="\e[31m"
+g="\e[32m"
+y="\e[33m"
 if [ $userid -ne 0 ]
 then
     echo "Error :: it should be in root user"
@@ -9,10 +11,10 @@ fi
 validate(){
     if [ $1 -ne 0 ]
     then
-    echo "installing.... $2 failure"
+    echo -e "$r Ainstalling.... $2 failure"
     exit 1
     else
-    echo "installing.... $2 sucessful"
+    echo "$g installing.... $2 sucessful"
     fi
 }
 
@@ -23,7 +25,7 @@ then
     validate $? "mysql"
     
 else
-echo "mysql is already installed"
+echo -e "$y mysql is already installed"
 fi
 dnf list installed git
 if [ $? -ne 0 ]
@@ -31,7 +33,7 @@ then
     dnf install git -y
    validate $? "git"
 else
-echo "git is already installed"
+echo -e "$y git is already installed"
 fi
 
     
