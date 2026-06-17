@@ -22,6 +22,7 @@ validate(){
     echo "$g installing.... $2 sucessful"
     fi
 }
+
 echo "Script started executing at : $time_stamp" &>>$log_file_name
 
 dnf list installed mysql &>>log_file_name
